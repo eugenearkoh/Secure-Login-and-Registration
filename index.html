@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101411">
+  <meta name="description" content="A responsive login and registration interface with accessible form validation.">
+  <title>Secure Login & Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="auth-container">
+    <section class="auth-card" aria-labelledby="page-title">
+      <header class="brand">
+        <div class="brand-icon" aria-hidden="true">N</div>
+        <span>NOVA<span class="brand-dot">.</span></span>
+      </header>
+
+      <div class="welcome">
+        <p class="eyebrow">YOUR SPACE, YOUR FUTURE</p>
+        <h1 id="page-title">Welcome back<span class="accent">.</span></h1>
+        <p class="subtitle" id="form-subtitle">Sign in to continue to your account.</p>
+      </div>
+
+      <div class="form-tabs" role="tablist" aria-label="Authentication options">
+        <button class="tab active" id="login-tab" type="button" role="tab"
+          aria-selected="true" aria-controls="login-form">Login</button>
+        <button class="tab" id="register-tab" type="button" role="tab"
+          aria-selected="false" aria-controls="register-form">Register</button>
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email">Email address</label>
+          <input id="login-email" name="email" type="email"
+            placeholder="you@example.com" autocomplete="email"
+            aria-describedby="login-email-error" required>
+          <small class="error-message" id="login-email-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <div class="password-wrap">
+            <input id="login-password" name="password" type="password"
+              placeholder="Enter your password" autocomplete="current-password"
+              aria-describedby="login-password-error" required>
+            <button class="password-toggle" type="button"
+              data-target="login-password" aria-label="Show password"
+              aria-pressed="false">Show</button>
+          </div>
+          <small class="error-message" id="login-password-error" aria-live="polite"></small>
+        </div>
+
+        <button class="submit-button" type="submit">Sign in <span aria-hidden="true">→</span></button>
+        <p class="form-feedback" id="login-feedback" role="status" aria-live="polite"></p>
+      </form>
+
+      <form id="register-form" novalidate hidden>
+        <div class="field">
+          <label for="register-name">Full name</label>
+          <input id="register-name" name="name" type="text"
+            placeholder="Your full name" autocomplete="name"
+            aria-describedby="register-name-error" required>
+          <small class="error-message" id="register-name-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="register-email">Email address</label>
+          <input id="register-email" name="email" type="email"
+            placeholder="you@example.com" autocomplete="email"
+            aria-describedby="register-email-error" required>
+          <small class="error-message" id="register-email-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="register-password">Password</label>
+          <div class="password-wrap">
+            <input id="register-password" name="password" type="password"
+              placeholder="At least 8 characters" autocomplete="new-password"
+              aria-describedby="register-password-error" required>
+            <button class="password-toggle" type="button"
+              data-target="register-password" aria-label="Show password"
+              aria-pressed="false">Show</button>
+          </div>
+          <small class="error-message" id="register-password-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirm-password">Confirm password</label>
+          <div class="password-wrap">
+            <input id="confirm-password" name="confirmPassword" type="password"
+              placeholder="Enter your password again" autocomplete="new-password"
+              aria-describedby="confirm-password-error" required>
+            <button class="password-toggle" type="button"
+              data-target="confirm-password" aria-label="Show password"
+              aria-pressed="false">Show</button>
+          </div>
+          <small class="error-message" id="confirm-password-error" aria-live="polite"></small>
+        </div>
+
+        <button class="submit-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+        <p class="form-feedback" id="register-feedback" role="status" aria-live="polite"></p>
+      </form>
+
+      <footer class="auth-footer">
+        <span class="footer-indicator" aria-hidden="true"></span>
+        <span>BUILT WITH CARE · PYNEXIA INTERNSHIP</span>
+      </footer>
+    </section>
+
+    <p class="security-note">A demo authentication interface · No real accounts are created.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
